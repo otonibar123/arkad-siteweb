@@ -14,6 +14,29 @@ function guardAuth(callback) {
   });
 }
 
+/* --- Admin Guard --- */
+function guardAdmin(callback) {
+  _supabase.auth.getSession().then(function (result) {
+    var session = result.data.session;
+    if (!session) {
+      window.location.href = 'portail.html';
+      return;
+    }
+    _supabase
+      .from('profiles')
+      .select('is_admin')
+      .eq('id', session.user.id)
+      .single()
+      .then(function (profileResult) {
+        if (profileResult.error || !profileResult.data || !profileResult.data.is_admin) {
+          window.location.href = 'portail.html';
+          return;
+        }
+        callback(session);
+      });
+  });
+}
+
 /* --- Login --- */
 function handleLogin(email, password, onError) {
   _supabase.auth.signInWithPassword({

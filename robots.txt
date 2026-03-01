@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /portail-dashboard.html
+Disallow: /admin.html
 Sitemap: https://arkad-consulting.com/sitemap.xml
