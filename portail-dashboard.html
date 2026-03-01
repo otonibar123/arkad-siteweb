@@ -3,16 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mentions légales — Arkad Consulting</title>
-  <meta name="description" content="Mentions légales du site arkad-consulting.com — Arkad Consulting SAS, 60 rue François Ier, 75008 Paris.">
-  <link rel="canonical" href="https://arkad-consulting.com/mentions-legales.html">
+  <title>Mon Espace — Arkad Consulting</title>
+  <meta name="description" content="Consultez vos factures et contrats depuis votre espace client Arkad Consulting.">
+  <link rel="canonical" href="https://arkad-consulting.com/portail-dashboard.html">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://arkad-consulting.com/mentions-legales.html">
-  <meta property="og:title" content="Mentions légales — Arkad Consulting">
-  <meta property="og:description" content="Mentions légales du site arkad-consulting.com — Arkad Consulting SAS.">
+  <meta property="og:url" content="https://arkad-consulting.com/portail-dashboard.html">
+  <meta property="og:title" content="Mon Espace — Arkad Consulting">
+  <meta property="og:description" content="Consultez vos factures et contrats depuis votre espace client Arkad Consulting.">
   <meta property="og:image" content="https://arkad-consulting.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="fr_FR">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mon Espace — Arkad Consulting">
+  <meta name="twitter:description" content="Consultez vos factures et contrats depuis votre espace client Arkad Consulting.">
+  <meta name="twitter:image" content="https://arkad-consulting.com/assets/og-image.png">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
@@ -23,8 +30,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/portal.css">
 </head>
-<body>
+<body class="portal-page">
 
 <!-- ====== Nav ====== -->
 <nav class="nav" aria-label="Navigation principale">
@@ -37,77 +45,88 @@
       <path d="M436.22,55.03c0-4.95-4.67-7.42-14.01-7.42h-43.37c-2.39,0-3.58-1.11-3.58-3.33,0-2.43,1.19-3.65,3.58-3.65h43.56c14.92,0,22.39,4.8,22.39,14.39v28.46c0,10.19-7.53,15.29-22.58,15.29h-44.13c-1.88,0-2.81-.98-2.81-2.94v-36.14c0-2.64,1.45-3.97,4.35-3.97s4.41,1.32,4.41,3.97v32.11h37.99c9.47,0,14.2-2.77,14.2-8.32v-28.46Z" fill="#eeece9" stroke="#eeece9" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
-  <div class="nav__links">
-    <a href="index.html#approche" class="nav__link">Notre approche</a>
-    <a href="index.html#offres" class="nav__link">Nos offres</a>
-    <a href="index.html#methode" class="nav__link">Méthode</a>
-    <a href="portail.html" class="nav__link">Espace client</a>
-    <a href="index.html#contact" class="btn btn--primary">Parlons-en <span class="btn__arrow">→</span></a>
+  <div class="nav__links portal-nav">
+    <span class="portal-nav__title">Espace client</span>
+    <button id="btn-logout" class="portal-nav__logout">Déconnexion</button>
   </div>
 </nav>
 
-<main>
+<!-- ====== Loading ====== -->
+<div id="portal-loading" class="portal-loading">
+  <div class="portal-loading__spinner"></div>
+  <span>Chargement...</span>
+</div>
 
-  <!-- ====== Mentions légales ====== -->
-  <section class="legal">
-    <div class="container">
-      <div class="section__eyebrow">Juridique</div>
-      <h1 class="section__title">Mentions légales</h1>
+<!-- ====== Dashboard ====== -->
+<div id="portal-dashboard" style="display:none;">
 
-      <div class="legal__content">
-
-        <h2>Éditeur du site</h2>
-        <p>Le site arkad-consulting.com est édité par :</p>
-        <p>
-          <strong>ARKAD CONSULTING</strong><br>
-          Société par actions simplifiée (SAS) au capital de 1 500 euros<br>
-          Siège social : 60 rue François Ier, 75008 Paris<br>
-          SIREN : 990 303 703<br>
-          SIRET : 990 303 703 00013<br>
-          Code APE : 62.02A — Conseil en systèmes et logiciels informatiques<br>
-          N° TVA intracommunautaire : FR68990303703
-        </p>
-
-        <h2>Directeur de la publication</h2>
-        <p>Fabrizio Scanavini, Président d'Arkad Consulting SAS.</p>
-
-        <h2>Contact</h2>
-        <p>
-          Email : <a href="mailto:contact@arkad-consulting.com">contact@arkad-consulting.com</a><br>
-          Téléphone : <a href="tel:+33962311386">+33 9 62 31 13 86</a>
-        </p>
-
-        <h2>Hébergeur</h2>
-        <p>
-          Cloudflare, Inc.<br>
-          101 Townsend Street, San Francisco, CA 94107, États-Unis<br>
-          <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">www.cloudflare.com</a>
-        </p>
-
-        <h2>Propriété intellectuelle</h2>
-        <p>L'ensemble du contenu de ce site (textes, images, logos, graphismes, icônes, structure) est la propriété exclusive d'Arkad Consulting SAS ou de ses partenaires et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
-        <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie du contenu du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable d'Arkad Consulting.</p>
-
-        <h2>Protection des données personnelles</h2>
-        <p>Les informations recueillies via le formulaire de contact sont destinées exclusivement à Arkad Consulting dans le cadre du traitement de votre demande. Elles ne sont ni cédées ni transmises à des tiers.</p>
-        <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition sur vos données personnelles. Vous pouvez exercer ces droits en écrivant à : <a href="mailto:contact@arkad-consulting.com">contact@arkad-consulting.com</a>.</p>
-
-        <h2>Cookies</h2>
-        <p>Ce site n'utilise pas de cookies de suivi ni de cookies publicitaires. Seuls des cookies strictement nécessaires au fonctionnement technique du site peuvent être utilisés par l'hébergeur.</p>
-
-        <h2>Limitation de responsabilité</h2>
-        <p>Arkad Consulting s'efforce de fournir des informations aussi exactes que possible sur ce site. Toutefois, elle ne pourra être tenue responsable des omissions, inexactitudes ou carences dans la mise à jour, qu'elles soient de son fait ou du fait de tiers.</p>
-        <p>Les liens hypertextes présents sur le site et dirigeant vers d'autres ressources sur Internet n'engagent pas la responsabilité d'Arkad Consulting quant au contenu de ces sites externes.</p>
-
-        <h2>Droit applicable</h2>
-        <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux de Paris seront seuls compétents.</p>
-
-        <a href="index.html" class="legal__back">← Retour à l'accueil</a>
+  <!-- Header -->
+  <div class="portal-header">
+    <div class="portal-header__inner">
+      <div>
+        <div id="portal-welcome" class="portal-header__welcome">Bonjour</div>
+        <div id="portal-company" class="portal-header__company"></div>
       </div>
     </div>
-  </section>
+  </div>
 
-</main>
+  <!-- Content -->
+  <div class="portal-content">
+
+    <!-- Tabs -->
+    <div class="portal-tabs">
+      <button class="portal-tab portal-tab--active" data-tab="section-invoices">Factures</button>
+      <button class="portal-tab" data-tab="section-contracts">Contrats</button>
+    </div>
+
+    <!-- Invoices Section -->
+    <div id="section-invoices" class="portal-section portal-section--active">
+      <div id="invoices-table-wrap" class="portal-table-wrap">
+        <table class="portal-table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Libellé</th>
+              <th>Date</th>
+              <th>Montant HT</th>
+              <th>Montant TTC</th>
+              <th>Statut</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="invoices-tbody"></tbody>
+        </table>
+      </div>
+      <div id="invoices-empty" class="portal-empty" style="display:none;">
+        <div class="portal-empty__icon">&#128196;</div>
+        <p>Aucune facture pour le moment.</p>
+      </div>
+    </div>
+
+    <!-- Contracts Section -->
+    <div id="section-contracts" class="portal-section">
+      <div id="contracts-table-wrap" class="portal-table-wrap">
+        <table class="portal-table">
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Description</th>
+              <th>Date de signature</th>
+              <th>Statut</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="contracts-tbody"></tbody>
+        </table>
+      </div>
+      <div id="contracts-empty" class="portal-empty" style="display:none;">
+        <div class="portal-empty__icon">&#128221;</div>
+        <p>Aucun contrat pour le moment.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- ====== Footer ====== -->
 <footer class="footer">
@@ -116,7 +135,7 @@
       <svg height="14" viewBox="0 0 500 139" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M93.7,49.18l-31.92,47.97c-.38.64-.85,1.09-1.41,1.34-.55.26-1.2.38-1.92.38-1.07,0-2.07-.35-3.01-1.06-.94-.7-1.41-1.63-1.41-2.78,0-.3.04-.64.13-1.02s.28-.77.58-1.15l-.06.06,33.39-49.96c.68-1.02,1.5-1.8,2.46-2.33.96-.53,1.97-.8,3.04-.8.98,0,1.97.26,2.97.77s1.87,1.3,2.59,2.37l33.46,49.83h-.06c.6.85.89,1.62.89,2.3,0,1.11-.46,2-1.38,2.69-.92.68-1.91,1.02-2.97,1.02-.68,0-1.34-.15-1.98-.45-.64-.3-1.15-.77-1.54-1.41v.06l-31.85-47.85Z" fill="rgba(238,236,233,0.2)" stroke="none"/><path d="M191.49,55.1c0-4.99-4.71-7.48-14.14-7.48h-42.47c-2.43,0-3.65-1.11-3.65-3.33,0-2.43,1.21-3.65,3.65-3.65h41.13c16.03,0,24.05,4.99,24.05,14.97v6.27c0,9.21-7.38,13.82-22.13,13.82h-22.13l37.61,16.12c.68.3,1.17.73,1.47,1.28.3.55.45,1.13.45,1.73,0,1.02-.35,1.99-1.06,2.91-.7.92-1.59,1.38-2.65,1.38-.47,0-.96-.13-1.47-.38l-48.04-22.13c-.73-.3-1.28-.77-1.66-1.41-.38-.64-.58-1.32-.58-2.05,0-1.07.4-2.05,1.22-2.94.81-.9,1.96-1.34,3.45-1.34h34.22c8.49,0,12.73-2.07,12.73-6.2v-7.55Z" fill="rgba(238,236,233,0.2)" stroke="none"/><path d="M223.67,95.52c0,2.43-1.39,3.65-4.16,3.65s-4.29-1.21-4.29-3.65v-51.62c0-2.39,1.45-3.58,4.35-3.58,2.73,0,4.09,1.19,4.09,3.58v51.62ZM237.04,69.17l36.27,22.9c.6.34,1.01.79,1.25,1.34.23.55.37,1.09.42,1.6,0,.98-.36,1.89-1.09,2.72-.73.83-1.58,1.25-2.56,1.25-.68,0-1.28-.17-1.79-.51l-41.51-26.1c-1.02-.6-1.54-1.54-1.54-2.81,0-.72.11-1.36.32-1.92.21-.55.62-1,1.21-1.34l39.4-25.46c.6-.43,1.24-.64,1.92-.64.55,0,1.1.13,1.63.38s1,.59,1.41.99c.4.41.72.85.96,1.34.23.49.35.99.35,1.5,0,1.02-.57,1.88-1.73,2.56l-34.92,22.2Z" fill="rgba(238,236,233,0.2)" stroke="none"/><path d="M324.03,49.4l-31.92,47.97c-.38.64-.85,1.09-1.41,1.34-.56.26-1.2.38-1.92.38-1.07,0-2.07-.35-3.01-1.06-.94-.7-1.41-1.63-1.41-2.78,0-.3.04-.64.13-1.02.08-.38.28-.77.58-1.15l-.06.06,33.39-49.96c.68-1.02,1.5-1.8,2.46-2.33.96-.53,1.97-.8,3.04-.8.98,0,1.97.26,2.97.77,1,.51,1.86,1.3,2.59,2.37l33.45,49.83h-.06c.6.85.89,1.62.89,2.3,0,1.11-.46,2-1.38,2.69-.92.68-1.91,1.02-2.97,1.02-.68,0-1.34-.15-1.98-.45-.64-.3-1.15-.77-1.54-1.41v.06l-31.86-47.85Z" fill="rgba(238,236,233,0.2)" stroke="none"/><path d="M436.22,55.03c0-4.95-4.67-7.42-14.01-7.42h-43.37c-2.39,0-3.58-1.11-3.58-3.33,0-2.43,1.19-3.65,3.58-3.65h43.56c14.92,0,22.39,4.8,22.39,14.39v28.46c0,10.19-7.53,15.29-22.58,15.29h-44.13c-1.88,0-2.81-.98-2.81-2.94v-36.14c0-2.64,1.45-3.97,4.35-3.97s4.41,1.32,4.41,3.97v32.11h37.99c9.47,0,14.2-2.77,14.2-8.32v-28.46Z" fill="rgba(238,236,233,0.2)" stroke="none"/>
       </svg>
-      <span>© 2025 Arkad Consulting</span>
+      <span>&copy; 2025 Arkad Consulting</span>
     </div>
     <div class="footer__links">
       <a href="mentions-legales.html" class="footer__link">Mentions légales</a>
@@ -124,6 +143,12 @@
     </div>
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/portal-auth.js"></script>
+<script src="js/portal-dashboard.js"></script>
+<script>initDashboard();</script>
 
 </body>
 </html>
