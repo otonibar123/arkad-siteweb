@@ -1,4 +1,17 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <rect width="100" height="100" rx="16" fill="#0f1112"/>
-  <path d="M50.2,27.5l-19.5,29.3c-.23.39-.52.67-.86.82-.34.16-.73.23-1.17.23-.65,0-1.27-.21-1.84-.65-.57-.43-.86-1-.86-1.7,0-.18.02-.39.08-.62.06-.23.17-.47.35-.7l-.04.04,20.4-30.5c.42-.62.92-1.1,1.5-1.42.59-.32,1.2-.49,1.86-.49.6,0,1.2.16,1.81.47.61.31,1.14.79,1.58,1.45l20.44,30.44h-.04c.37.52.54.99.54,1.4,0,.68-.28,1.22-.84,1.64-.56.42-1.17.62-1.81.62-.42,0-.82-.09-1.21-.27-.39-.18-.7-.47-.94-.86v.04L50.2,27.5Z" fill="#eeece9" stroke="#eeece9" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="g" x1="0.3" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <!-- Triangle -->
+  <path d="M50 22 L78 70 L22 70 Z" fill="none" stroke="url(#g)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Bottom line extending right -->
+  <line x1="22" y1="70" x2="82" y2="70" stroke="url(#g)" stroke-width="7" stroke-linecap="round"/>
+  <!-- Nodes -->
+  <circle cx="78" cy="33" r="5" fill="#ffffff"/>
+  <circle cx="22" cy="70" r="5" fill="#ffffff"/>
+  <circle cx="82" cy="70" r="5" fill="#ffffff"/>
 </svg>
