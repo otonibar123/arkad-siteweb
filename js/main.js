@@ -51,15 +51,44 @@ window.addEventListener('scroll', function () {
   });
 });
 
-/* --- Formulaire de contact (simulation) --- */
+/* --- Formulaire de contact --- */
 var contactForm = document.querySelector('.form');
 
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = contactForm.querySelector('.form__submit .btn');
-    btn.textContent = '\u2713 Message envoyé';
-    btn.classList.add('btn--sent');
+    var originalHTML = btn.innerHTML;
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+
+    var data = {
+      name: document.getElementById('name').value.trim(),
+      company: document.getElementById('company').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      message: document.getElementById('message').value.trim()
+    };
+
+    _supabase.from('messages').insert([data])
+      .then(function (res) {
+        if (res.error) throw res.error;
+        btn.textContent = '\u2713 Message envoyé';
+        btn.classList.add('btn--sent');
+        contactForm.reset();
+        setTimeout(function () {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('btn--sent');
+          btn.disabled = false;
+        }, 4000);
+      })
+      .catch(function () {
+        btn.textContent = 'Erreur — réessayez';
+        btn.disabled = false;
+        setTimeout(function () {
+          btn.innerHTML = originalHTML;
+        }, 3000);
+      });
   });
 }
 
